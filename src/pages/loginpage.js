@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import logo from '../../src/assets/app_icon.png'
 
 const schema = z.object({
   email: z.string().email({ message: "Email is required" }),
@@ -35,37 +36,30 @@ function Login() {
       );
       console.log(response.data);
 
-      if (
-        response.data &&
-        (response.status === 201 || response.status === 200)
-      ) {
+      if (   response.data && (response.status === 201 || response.status === 200)) {
         console.log(response.data);
       
         toast.success("Login Successfully");
         localStorage.setItem("tokendata", JSON.stringify(response.data))
         navigate("/home");
-      } else {
-        setErrorMessage("Invalid data received from the server.");
-      }
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        form.setError("email", { message: error.response.data.message });
-      } else {
-        setErrorMessage("An error occurred. Please try again.");
-      }
+      } 
+    } catch (error) { 
+      toast.error(error.response.data.error);
+     
+      console.log(error.response.data.error)
+     
     }
   };
 
   return (
     <main>
-      <section class="section-login">
-        <div class="section-main">
+      <section class="section-login"> 
+      
+        <div class="section-main"> 
           <div class="section-login-1">
-            <div class="section-login-1-main"> </div>
+            <div class="section-login-1-main"> 
+             {/* <img src={logo} className="imagelogo"/> */}
+             </div>
           </div>
           <div class="section-login-2">
             <div class="section-login-2-main">
@@ -112,11 +106,11 @@ function Login() {
                 <div class="login-form-submit-btn">
                   <button>Create an Account</button>
                 </div>
-                {/* <div class="login-form-5">
+                <div class="login-form-5">
                   <p>
-                    Already have an account? <a href="#">Sign In</a>
+                   Don't have an account <a href="/register">Sign Up</a>
                   </p>
-                </div> */}
+                </div>
               </form>
             </div>
           </div>

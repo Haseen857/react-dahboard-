@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Register from "./pages/register";
 import Login from "./pages/loginpage"
 import Otp from "./pages/otp";
+import Dashboard from "./dashboard/dashboard";
 
 import Homepage from "./dashboard/homepage";
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/register" element={<Register/>} />
           <Route path="/otp" element={<Otp />} />
           <Route path="/home" element={<Homepage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         
         </Routes>  
 

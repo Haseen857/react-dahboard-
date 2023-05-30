@@ -9,20 +9,25 @@ import {
   } from 'cdbreact';
 
   import { NavLink } from 'react-router-dom';
+  import mainlogo from '../../src/assets/app_icon.png'
 function Homepage() {
   return (
-    <>
+    <> 
+    <div>
+      
+    </div>
      <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
       <CDBSidebar textColor="#fff" backgroundColor="#333">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          {/* <img src={mainlogo} style={{width:'50px'}}/> */}
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-            Sidebar
+           CareTeam
           </a>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink exact to="/dashboard" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/tables" activeClassName="activeClicked">
@@ -41,7 +46,7 @@ function Homepage() {
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-        <CDBSidebarFooter style={{ textAlign: 'center' , backgroundColor:'#695cd5' }}>
+        <CDBSidebarFooter style={{ textAlign: 'center' , backgroundColor:'#8174e7' }}>
           <div
             style={{
               padding: '20px 5px',
@@ -51,6 +56,7 @@ function Homepage() {
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>
+      <div className='header-part'> </div>
     </div>
     </>
   )

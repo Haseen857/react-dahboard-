@@ -154,11 +154,11 @@ function Register() {
                 <div class="login-form-submit-btn">
                   <button>Create an Account</button>
                 </div>
-                {/* <div class="login-form-5">
+                <div class="login-form-5">
                   <p>
-                    Already have an account? <a href="#">Sign In</a>
+                    Already have an account? <a href="/login">Sign In</a>
                   </p>
-                </div> */}
+                </div>
               </form>
             </div>
           </div>
